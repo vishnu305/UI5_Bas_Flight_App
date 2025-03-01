@@ -1,0 +1,15 @@
+<mvc:View
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m"
+controllerName="sap.training.exc.controller.App"
+displayBlock="true"
+>
+
+<!-- <Text text="Hello World 3" />
+<Button text="Say Hello" press=".onSayHello"/> -->
+
+<Shell>
+  <App id="app" />
+</Shell>
+
+</mvc:View>

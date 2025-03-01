@@ -1,13 +1,13 @@
 {
     "_version": "1.28.0",
     "sap.app": {
-        "id": "<...>",
+        "id": "sap.training.exc",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
             "version": "0.0.1"
         },
-        "title": "{{appTitle}}",
+        "title": "Customers Creation",
         "description": "{{appDescription}}",
         "resources": "resources.json",
         "sourceTemplate": {
@@ -59,18 +59,20 @@
             }
         },
         "contentDensities": {
-            "compact": false,
+            "compact": true,
             "cozy": true
         },
         "models": {
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "<...>"
+                    "bundleName": "sap.training.exc.i18n.i18n",
+                    "supportedLocales": [""],
+                    "fallbackLocale": ""
                 }
             },
-            "ODataModel": {
-                "dataSource": "<...>",
+            "": {
+                "dataSource": "mainService",
                 "settings": {
                     "synchronizationMode": "None",
                     "operationMode": "Server",
@@ -79,6 +81,7 @@
                 }
             }
         },
+        "handleValidation": true,
         "resources": {
             "css": [
                 {
@@ -93,13 +96,49 @@
                 "async": true,
                 "viewPath": "sap.training.exc.view",
                 "controlAggregation": "pages",
-                "controlId": "<...>"
+                "controlId": "app",
+                "bypassed": {
+                            "target": [
+                                        "notFound"
+                                    ]
+                            }
             },
-            "routes": [],
-            "targets": {}
+            "routes": [
+                {
+                    "name": "overview",
+                    "pattern": "",
+                    "target": [
+                      "overview"
+                    ]
+                },
+                {
+                    "name": "detail",
+                    "pattern": "detail/{customerId}",
+                    "target": [
+                      "detail"
+                    ]
+                  }
+            ],
+            "targets": {
+                "overview": {
+                                "viewId": "overview",
+                                "viewName": "Overview",
+                                "viewLevel": 1
+                            },
+                "detail":   {
+                                "viewId": "detail",
+                                "viewName": "Detail",
+                                "viewLevel": 2
+                            },
+                "notFound": {
+                                "viewId": "notFound",
+                                "viewName": "NotFound",
+                                "transition": "show"
+                            }
+            }
         },
         "rootView": {
-            "viewName": "<...>",
+            "viewName": "sap.training.exc.view.App",
             "type": "XML",
             "async": true,
             "id": "App"
