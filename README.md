@@ -8,10 +8,10 @@ You can complete each of the exercises using your SAP BTP Free Tier account.
 
 ## Download and Installation
 
-To get started with the first exercise, simply run the following commands in your terminal:
+To get started, simply run the following commands in your terminal:
 
 ```sh
-git clone https://github.com/SAP-samples/sapui5-development-learning-journey
+git clone https://github.com/vishnu305/UI5_Bas_Flight_App
 ```
 
 We recommend to follow the instructions in the [learning journey](https://learning.sap.com/learning-journey/sapui5-development-learning-journey) to get started.
